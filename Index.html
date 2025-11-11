@@ -1,0 +1,1445 @@
+<!doctype html>
+<html lang="it">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Califano Digital Marketing</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+        body {
+            box-sizing: border-box;
+        }
+        
+        .corner {
+          background-color: #fec608;
+        }
+        section
+        button {
+          background-color: #fec608;
+          color:#1d1d1b
+        }
+
+        .hero-content-animation
+        a {
+          background-color: #fec608;
+          color: #1d1d1b;
+        }
+
+        #servizi,
+        #contatti  {
+          background-color: #1d1d1b;
+        }
+
+        
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            scroll-behavior: smooth;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+            color: #fec608;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: white;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.7;
+            }
+        }
+
+        .service-card {
+          background-color: #f2f1ec;
+        }
+        .influencer-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .influencer-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            padding: 20px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .influencer-card:hover .influencer-overlay {
+            transform: translateY(0);
+        }
+
+        /* Influencer Premium Cards */
+        .influencer-premium {
+            transition: all 0.5s ease;
+        }
+
+        .influencer-premium:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Scrollbar Hide */
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Hero Section Animations */
+        .floating-element {
+            background: linear-gradient(45deg, rgba(254, 198, 8, 0.3), rgba(254, 198, 8, 0.1));
+            animation: float 6s ease-in-out infinite;
+        }
+
+      
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(180deg);
+            }
+        }
+
+        .hero-content-animation {
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-title-animation {
+            animation: slideInFromLeft 1.2s ease-out;
+        }
+
+        .hero-subtitle-animation {
+            animation: slideInFromRight 1.2s ease-out 0.3s both;
+        }
+
+        .hero-button-animation {
+            animation: bounceIn 1s ease-out 0.6s both;
+        }
+
+        .stats-animation {
+            animation: fadeInUp 1s ease-out 0.8s both;
+        }
+
+        .stat-item {
+            animation: slideInUp 0.8s ease-out both;
+        }
+
+        .scroll-indicator {
+            animation: bounce 2s infinite;
+        }
+
+        .scroll-dot {
+            animation: scrollDot 2s infinite;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInFromLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInFromRight {
+            from {
+                opacity: 0;
+                transform: translateX(100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounceIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.3);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.05);
+            }
+            70% {
+                transform: scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 53%, 80%, 100% {
+                transform: translate(-50%, 0);
+            }
+            40%, 43% {
+                transform: translate(-50%, -10px);
+            }
+            70% {
+                transform: translate(-50%, -5px);
+            }
+            90% {
+                transform: translate(-50%, -2px);
+            }
+        }
+
+        @keyframes scrollDot {
+            0% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            50% {
+                opacity: 0.3;
+                transform: translateY(10px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Counter Animation */
+        .counter {
+            transition: all 0.3s ease;
+        }
+
+        /* Video Background Styles */
+        #hero-video {
+            filter: brightness(0.7) contrast(1.1);
+        }
+
+        /* Parallax Effect */
+        .parallax-bg {
+            transform: translateZ(0);
+            will-change: transform;
+        }
+
+        /* Partners Section Animations */
+        .animate-scroll {
+            animation: scroll 30s linear infinite;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .partner-spotlight {
+            transition: all 0.5s ease;
+        }
+
+        .partner-spotlight:hover {
+            transform: translateY(-10px);
+        }
+    </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body><!-- Navigation -->
+  <nav id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300">
+   <div class="max-w-7xl mx-auto px-6 py-4">
+    <div class="flex justify-between items-center">
+     <div id="nav-logo" class="text-2xl font-bold"></div>
+     <div class="hidden md:flex space-x-8"><a href="#home" class="nav-link">Home</a> <a href="#servizi" class="nav-link">Servizi</a> <a href="#partner" class="nav-link">Partner</a> <a href="#influencer" class="nav-link">Influencer</a> <a href="#contatti" class="nav-link">Contatti</a>
+     </div><button id="mobile-menu-btn" class="md:hidden">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg></button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden mt-4 space-y-2"><a href="#home" class="block py-2">Home</a> <a href="#servizi" class="block py-2">Servizi</a> <a href="#partner" class="block py-2">Partner</a> <a href="#influencer" class="block py-2">Influencer</a> <a href="#contatti" class="block py-2">Contatti</a>
+    </div>
+   </div>
+  </nav><!-- Hero Section -->
+  <section id="home" class="relative min-h-full flex items-center justify-center text-white pt-20 overflow-hidden"><!-- Video Background -->
+   <div class="absolute inset-0 w-full h-full">
+    <video id="hero-video" autoplay muted loop playsinline class="w-full h-full object-cover"><source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+    </video><!-- Video Overlay -->
+    <div id="video-overlay" class="absolute inset-0 bg-black bg-opacity-60"></div>
+   </div><!-- Animated Background Elements -->
+   <div class="absolute inset-0 overflow-hidden pointer-events-none">
+    <div class="floating-element absolute top-20 left-10 w-20 h-20 rounded-full opacity-20"></div>
+    <div class="floating-element absolute top-40 right-20 w-16 h-16 rounded-full opacity-15" style="animation-delay: -2s;"></div>
+    <div class="floating-element absolute bottom-40 left-20 w-24 h-24 rounded-full opacity-10" style="animation-delay: -4s;"></div>
+    <div class="floating-element absolute bottom-20 right-10 w-18 h-18 rounded-full opacity-25" style="animation-delay: -1s;"></div>
+   </div><!-- Content -->
+   <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
+    <div class="hero-content-animation">
+     <h1 id="hero-title" class="text-5xl md:text-7xl font-bold mb-6 hero-title-animation"></h1>
+     <p id="hero-subtitle" class="text-xl md:text-2xl mb-12 opacity-90 hero-subtitle-animation">
+      </p>
+      <a href="#contatti" class="inline-block px-8 py-4 rounded-full font-semibold text-lg transition-all duration-500 hover:scale-110 hover:shadow-2xl hero-button-animation transform hover:rotate-1"> 
+      Inizia Ora 
+      </a>
+    </div><!-- Stats with enhanced animations -->
+    <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 stats-animation">
+     <div class="text-center stat-item transform hover:scale-105 transition-all duration-300">
+      <div class="text-4xl font-bold mb-2 counter" data-target="500">
+       0
+      </div>
+      <div class="text-sm opacity-80">
+       Campagne
+      </div>
+     </div>
+     <div class="text-center stat-item transform hover:scale-105 transition-all duration-300" style="animation-delay: 0.2s;">
+      <div class="text-4xl font-bold mb-2 counter" data-target="200">
+       0
+      </div>
+      <div class="text-sm opacity-80">
+       Influencer
+      </div>
+     </div>
+     <div class="text-center stat-item transform hover:scale-105 transition-all duration-300" style="animation-delay: 0.4s;">
+      <div class="text-4xl font-bold mb-2 counter" data-target="150">
+       0
+      </div>
+      <div class="text-sm opacity-80">
+       Brand Partner
+      </div>
+     </div>
+     <div class="text-center stat-item transform hover:scale-105 transition-all duration-300" style="animation-delay: 0.6s;">
+      <div class="text-4xl font-bold mb-2 counter" data-target="10">
+       0
+      </div>
+      <div class="text-sm opacity-80">
+       Reach Totale (M)
+      </div>
+     </div>
+    </div>
+   </div><!-- Scroll Indicator -->
+   <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 scroll-indicator">
+    <div class="w-6 h-10 border-2 border-white rounded-full flex justify-center">
+     <div class="w-1 h-3 bg-white rounded-full mt-2 scroll-dot"></div>
+    </div>
+    <p class="text-xs mt-2 opacity-70">Scorri</p>
+   </div>
+  </section><!-- Services Section -->
+  <section id="servizi" class="py-20 px-6">
+   <div class="max-w-7xl mx-auto">
+    <h2 id="services-title" class="text-4xl md:text-5xl font-bold text-center mb-16 text-white">
+      I Nostri Servizi
+    </h2>
+    <div class="grid md:grid-cols-3 gap-8">
+     <div class="service-card card-hover group relative overflow-hidden rounded-3xl p-10 text-left">
+      <div class="corner absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-yellow-400/10 to-transparent rounded-full -translate-y-16 translate-x-16"></div>
+      <div class="relative z-10">
+       <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-yellow-400 to-yellow-500 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
+        📱
+       </div>
+       <h3 class="text-2xl font-bold mb-4 group-hover:text-yellow-400 transition-colors duration-300">Social Media Strategy</h3>
+       <p class="opacity-70 leading-relaxed mb-6">Creiamo strategie personalizzate per massimizzare la tua presenza sui social media e raggiungere il tuo pubblico target.</p>
+       <div class="flex items-center text-sm font-semibold text-yellow-400 group-hover:translate-x-2 transition-transform duration-300">
+        Scopri di più 
+        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+        </svg>
+       </div>
+      </div>
+     </div>
+     <div class="service-card card-hover group relative overflow-hidden rounded-3xl p-10 text-left">
+      <div class="corner absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-yellow-400/10 to-transparent rounded-full -translate-y-16 translate-x-16"></div>
+      <div class="relative z-10">
+       <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-yellow-400 to-yellow-500 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
+        🤝
+       </div>
+       <h3 class="text-2xl font-bold mb-4 group-hover:text-yellow-400 transition-colors duration-300">Influencer Marketing</h3>
+       <p class="opacity-70 leading-relaxed mb-6">Connettiamo il tuo brand con gli influencer più adatti per campagne autentiche e di impatto.</p>
+       <div class="flex items-center text-sm font-semibold text-yellow-400 group-hover:translate-x-2 transition-transform duration-300">
+        Scopri di più 
+        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+        </svg>
+       </div>
+      </div>
+     </div>
+     <div class="service-card card-hover group relative overflow-hidden rounded-3xl p-10 text-left">
+      <div class="corner absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-yellow-400/10 to-transparent rounded-full -translate-y-16 translate-x-16"></div>
+      <div class="relative z-10">
+       <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-yellow-400 to-yellow-500 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
+        📊
+       </div>
+       <h3 class="text-2xl font-bold mb-4 group-hover:text-yellow-400 transition-colors duration-300">Analytics &amp; Reporting</h3>
+       <p class="opacity-70 leading-relaxed mb-6">Monitoriamo e analizziamo ogni campagna con report dettagliati per ottimizzare i risultati.</p>
+       <div class="flex items-center text-sm font-semibold text-yellow-400 group-hover:translate-x-2 transition-transform duration-300">
+        Scopri di più 
+        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+        </svg>
+       </div>
+      </div>
+     </div>
+     <div class="service-card card-hover group relative overflow-hidden rounded-3xl p-10 text-left">
+      <div class="corner absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-yellow-400/10 to-transparent rounded-full -translate-y-16 translate-x-16"></div>
+      <div class="relative z-10">
+       <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-yellow-400 to-yellow-500 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
+        🎨
+       </div>
+       <h3 class="text-2xl font-bold mb-4 group-hover:text-yellow-400 transition-colors duration-300">Content Creation</h3>
+       <p class="opacity-70 leading-relaxed mb-6">Produciamo contenuti creativi e coinvolgenti che raccontano la storia del tuo brand.</p>
+       <div class="flex items-center text-sm font-semibold text-yellow-400 group-hover:translate-x-2 transition-transform duration-300">
+        Scopri di più 
+        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+        </svg>
+       </div>
+      </div>
+     </div>
+     <div class="service-card card-hover group relative overflow-hidden rounded-3xl p-10 text-left">
+      <div class="corner absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-yellow-400/10 to-transparent rounded-full -translate-y-16 translate-x-16"></div>
+      <div class="relative z-10">
+       <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-yellow-400 to-yellow-500 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
+        🎯
+       </div>
+       <h3 class="text-2xl font-bold mb-4 group-hover:text-yellow-400 transition-colors duration-300">Campaign Management</h3>
+       <p class="opacity-70 leading-relaxed mb-6">Gestiamo ogni aspetto delle tue campagne digital, dall'ideazione alla realizzazione.</p>
+       <div class="flex items-center text-sm font-semibold text-yellow-400 group-hover:translate-x-2 transition-transform duration-300">
+        Scopri di più 
+        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+        </svg>
+       </div>
+      </div>
+     </div>
+     <div class="service-card card-hover group relative overflow-hidden rounded-3xl p-10 text-left">
+      <div class="corner absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-yellow-400/10 to-transparent rounded-full -translate-y-16 translate-x-16"></div>
+      <div class="relative z-10">
+       <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-yellow-400 to-yellow-500 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
+        💡
+       </div>
+       <h3 class="text-2xl font-bold mb-4 group-hover:text-yellow-400 transition-colors duration-300">Brand Consulting</h3>
+       <p class="opacity-70 leading-relaxed mb-6">Consulenza strategica per sviluppare e rafforzare l'identità digitale del tuo brand.</p>
+       <div class="flex items-center text-sm font-semibold text-yellow-400 group-hover:translate-x-2 transition-transform duration-300">
+        Scopri di più 
+        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+        </svg>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section><!-- Partners Section -->
+  <section id="partner" class="py-20 px-6 relative overflow-hidden"><!-- Background Pattern -->
+   <div class="absolute inset-0 opacity-5">
+    <div class="absolute top-10 left-10 w-32 h-32 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-600 animate-pulse"></div>
+    <div class="absolute top-40 right-20 w-24 h-24 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-600 animate-pulse" style="animation-delay: 2s;"></div>
+    <div class="absolute bottom-20 left-1/4 w-20 h-20 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-600 animate-pulse" style="animation-delay: 4s;"></div>
+   </div>
+   <div class="max-w-7xl mx-auto relative z-10">
+    <h2 id="partners-title" class="text-4xl md:text-5xl font-bold text-center mb-8">I Nostri Partner</h2>
+    <p class="text-center text-lg opacity-70 mb-16 max-w-2xl mx-auto">Collaboriamo con brand leader di settore per creare campagne innovative e di successo</p><!-- Featured Partners Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-12 mb-16"><!-- Premium Partner 1 -->
+     <div class="partner-spotlight group relative">
+      <div class="absolute inset-0 bg-gradient-to-br from-yellow-400/20 to-transparent rounded-3xl transform rotate-3 group-hover:rotate-6 transition-transform duration-500"></div>
+      <div class="relative bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20 group-hover:bg-white/20 transition-all duration-500">
+       <div class="text-6xl mb-4 group-hover:scale-110 transition-transform duration-300">
+        🏢
+       </div>
+       <h3 class="text-2xl font-bold mb-2 group-hover:text-yellow-400 transition-colors duration-300">TechCorp</h3>
+       <p class="text-sm opacity-70 mb-4">Tecnologia &amp; Innovazione</p>
+       <div class="flex items-center text-xs opacity-60"><span class="w-2 h-2 bg-green-400 rounded-full mr-2"></span> Partner dal 2020
+       </div>
+      </div>
+     </div><!-- Premium Partner 2 -->
+     <div class="partner-spotlight group relative">
+      <div class="absolute inset-0 bg-gradient-to-br from-yellow-400/20 to-transparent rounded-3xl transform -rotate-2 group-hover:-rotate-4 transition-transform duration-500"></div>
+      <div class="relative bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20 group-hover:bg-white/20 transition-all duration-500">
+       <div class="text-6xl mb-4 group-hover:scale-110 transition-transform duration-300">
+        👗
+       </div>
+       <h3 class="text-2xl font-bold mb-2 group-hover:text-yellow-400 transition-colors duration-300">Fashion Elite</h3>
+       <p class="text-sm opacity-70 mb-4">Moda &amp; Lifestyle</p>
+       <div class="flex items-center text-xs opacity-60"><span class="w-2 h-2 bg-green-400 rounded-full mr-2"></span> Partner dal 2019
+       </div>
+      </div>
+     </div><!-- Premium Partner 3 -->
+     <div class="partner-spotlight group relative">
+      <div class="absolute inset-0 bg-gradient-to-br from-yellow-400/20 to-transparent rounded-3xl transform rotate-1 group-hover:rotate-3 transition-transform duration-500"></div>
+      <div class="relative bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20 group-hover:bg-white/20 transition-all duration-500">
+       <div class="text-6xl mb-4 group-hover:scale-110 transition-transform duration-300">
+        💄
+       </div>
+       <h3 class="text-2xl font-bold mb-2 group-hover:text-yellow-400 transition-colors duration-300">Beauty Pro</h3>
+       <p class="text-sm opacity-70 mb-4">Beauty &amp; Cosmetics</p>
+       <div class="flex items-center text-xs opacity-60"><span class="w-2 h-2 bg-green-400 rounded-full mr-2"></span> Partner dal 2021
+       </div>
+      </div>
+     </div>
+    </div><!-- Brand Showcase Carousel -->
+    <div class="text-center mb-8">
+     <h3 class="text-2xl font-semibold mb-4 opacity-80">Altri Brand di Fiducia</h3>
+    </div><!-- Animated Brand Strip -->
+    <div class="relative overflow-hidden">
+     <div class="flex animate-scroll space-x-16 py-8"><!-- First Set -->
+      <div class="flex items-center space-x-4 bg-white/5 backdrop-blur-sm rounded-2xl px-6 py-4 border border-white/10 hover:bg-white/10 transition-all duration-300 whitespace-nowrap"><span class="text-3xl">🍕</span> <span class="font-semibold text-lg">Food Masters</span>
+      </div>
+      <div class="flex items-center space-x-4 bg-white/5 backdrop-blur-sm rounded-2xl px-6 py-4 border border-white/10 hover:bg-white/10 transition-all duration-300 whitespace-nowrap"><span class="text-3xl">🏋️</span> <span class="font-semibold text-lg">Fitness Revolution</span>
+      </div>
+      <div class="flex items-center space-x-4 bg-white/5 backdrop-blur-sm rounded-2xl px-6 py-4 border border-white/10 hover:bg-white/10 transition-all duration-300 whitespace-nowrap"><span class="text-3xl">🎮</span> <span class="font-semibold text-lg">Gaming Universe</span>
+      </div>
+      <div class="flex items-center space-x-4 bg-white/5 backdrop-blur-sm rounded-2xl px-6 py-4 border border-white/10 hover:bg-white/10 transition-all duration-300 whitespace-nowrap"><span class="text-3xl">✈️</span> <span class="font-semibold text-lg">Travel Dreams</span>
+      </div>
+      <div class="flex items-center space-x-4 bg-white/5 backdrop-blur-sm rounded-2xl px-6 py-4 border border-white/10 hover:bg-white/10 transition-all duration-300 whitespace-nowrap"><span class="text-3xl">🎵</span> <span class="font-semibold text-lg">Music Waves</span>
+      </div><!-- Duplicate Set for Seamless Loop -->
+      <div class="flex items-center space-x-4 bg-white/5 backdrop-blur-sm rounded-2xl px-6 py-4 border border-white/10 hover:bg-white/10 transition-all duration-300 whitespace-nowrap"><span class="text-3xl">🍕</span> <span class="font-semibold text-lg">Food Masters</span>
+      </div>
+      <div class="flex items-center space-x-4 bg-white/5 backdrop-blur-sm rounded-2xl px-6 py-4 border border-white/10 hover:bg-white/10 transition-all duration-300 whitespace-nowrap"><span class="text-3xl">🏋️</span> <span class="font-semibold text-lg">Fitness Revolution</span>
+      </div>
+      <div class="flex items-center space-x-4 bg-white/5 backdrop-blur-sm rounded-2xl px-6 py-4 border border-white/10 hover:bg-white/10 transition-all duration-300 whitespace-nowrap"><span class="text-3xl">🎮</span> <span class="font-semibold text-lg">Gaming Universe</span>
+      </div>
+      <div class="flex items-center space-x-4 bg-white/5 backdrop-blur-sm rounded-2xl px-6 py-4 border border-white/10 hover:bg-white/10 transition-all duration-300 whitespace-nowrap"><span class="text-3xl">✈️</span> <span class="font-semibold text-lg">Travel Dreams</span>
+      </div>
+      <div class="flex items-center space-x-4 bg-white/5 backdrop-blur-sm rounded-2xl px-6 py-4 border border-white/10 hover:bg-white/10 transition-all duration-300 whitespace-nowrap"><span class="text-3xl">🎵</span> <span class="font-semibold text-lg">Music Waves</span>
+      </div>
+     </div>
+    </div><!-- Partnership Stats -->
+    <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+     <div class="group">
+      <div class="text-3xl font-bold mb-2 group-hover:text-yellow-400 transition-colors duration-300">
+       150+
+      </div>
+      <div class="text-sm opacity-70">
+       Brand Partner
+      </div>
+     </div>
+     <div class="group">
+      <div class="text-3xl font-bold mb-2 group-hover:text-yellow-400 transition-colors duration-300">
+       25
+      </div>
+      <div class="text-sm opacity-70">
+       Settori Diversi
+      </div>
+     </div>
+     <div class="group">
+      <div class="text-3xl font-bold mb-2 group-hover:text-yellow-400 transition-colors duration-300">
+       98%
+      </div>
+      <div class="text-sm opacity-70">
+       Soddisfazione
+      </div>
+     </div>
+     <div class="group">
+      <div class="text-3xl font-bold mb-2 group-hover:text-yellow-400 transition-colors duration-300">
+       5
+      </div>
+      <div class="text-sm opacity-70">
+       Anni Esperienza
+      </div>
+     </div>
+    </div>
+   </div>
+  </section><!-- Influencers Section -->
+  <section id="influencer" class="py-20 px-6 relative overflow-hidden"><!-- Background Elements -->
+   <div class="absolute inset-0 opacity-5">
+    <div class="absolute top-20 right-10 w-40 h-40 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-600 animate-pulse"></div>
+    <div class="absolute bottom-40 left-20 w-32 h-32 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-600 animate-pulse" style="animation-delay: 3s;"></div>
+    <div class="absolute top-1/2 left-1/2 w-24 h-24 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-600 animate-pulse" style="animation-delay: 1.5s;"></div>
+   </div>
+   <div class="max-w-7xl mx-auto relative z-10">
+    <div class="text-center mb-16">
+     <h2 id="influencers-title" class="text-4xl md:text-5xl font-bold mb-6"></h2>
+     <p class="text-lg opacity-70 max-w-2xl mx-auto">I creator più influenti e autentici del panorama digitale italiano, pronti a dare voce al tuo brand</p>
+    </div><!-- Featured Influencers Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16"><!-- Top Influencer 1 -->
+     <div class="influencer-premium group relative">
+      <div class="absolute inset-0 bg-gradient-to-br from-yellow-400/10 to-transparent rounded-3xl transform rotate-1 group-hover:rotate-2 transition-transform duration-500"></div>
+      <div class="relative bg-white/5 backdrop-blur-xl rounded-3xl overflow-hidden border border-white/10 group-hover:bg-white/10 group-hover:border-white/20 transition-all duration-500 shadow-2xl"><!-- Profile Image Placeholder -->
+       <div class="aspect-square bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center text-6xl relative overflow-hidden">
+        👨‍💼 
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div><!-- Hover Description Overlay -->
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+         <div class="text-center text-white">
+          <h4 class="text-lg font-bold mb-2">Marco Rossi</h4>
+          <p class="text-sm opacity-90 leading-relaxed">Imprenditore digitale con 8 anni di esperienza nel settore tech. Specializzato in startup innovative e intelligenza artificiale. Collabora con i più grandi brand tecnologici italiani.</p>
+         </div>
+        </div><!-- Verified Badge -->
+        <div class="absolute top-4 right-4 w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center shadow-lg">
+         <svg class="w-5 h-5 text-white" fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+         </svg>
+        </div><!-- Live Indicator -->
+        <div class="absolute top-4 left-4 flex items-center space-x-2">
+         <div class="w-3 h-3 bg-green-400 rounded-full animate-pulse shadow-lg"></div><span class="text-white text-xs font-semibold bg-black/60 backdrop-blur-sm px-2 py-1 rounded-full">ATTIVO</span>
+        </div>
+       </div><!-- Info Panel -->
+       <div class="p-6">
+        <div class="flex items-center justify-between mb-3">
+         <h3 class="text-2xl font-bold group-hover:text-yellow-400 transition-colors duration-300">Marco Rossi</h3>
+         <div class="flex space-x-2">
+          <div class="w-6 h-6 bg-blue-600 rounded flex items-center justify-center text-white text-xs">
+           📘
+          </div>
+          <div class="w-6 h-6 bg-pink-500 rounded flex items-center justify-center text-white text-xs">
+           📷
+          </div>
+          <div class="w-6 h-6 bg-red-600 rounded flex items-center justify-center text-white text-xs">
+           📺
+          </div>
+         </div>
+        </div>
+        <p class="text-sm opacity-70 mb-4">Business &amp; Tech Entrepreneur</p><!-- Stats Row -->
+        <div class="grid grid-cols-3 gap-4 mb-4">
+         <div class="text-center">
+          <div class="text-lg font-bold influencer-stats">
+           500K
+          </div>
+          <div class="text-xs opacity-60">
+           Followers
+          </div>
+         </div>
+         <div class="text-center">
+          <div class="text-lg font-bold influencer-stats">
+           4.8%
+          </div>
+          <div class="text-xs opacity-60">
+           Engagement
+          </div>
+         </div>
+         <div class="text-center">
+          <div class="text-lg font-bold influencer-stats">
+           25-45
+          </div>
+          <div class="text-xs opacity-60">
+           Età Target
+          </div>
+         </div>
+        </div><!-- Specialties -->
+        <div class="flex flex-wrap gap-2 mb-4"><span class="influencer-tag px-3 py-1 rounded-full text-xs font-semibold">Startup</span> <span class="influencer-tag px-3 py-1 rounded-full text-xs font-semibold">Fintech</span> <span class="influencer-tag px-3 py-1 rounded-full text-xs font-semibold">AI</span>
+        </div><!-- CTA Button --> <button class="w-full py-3 bg-gradient-to-r from-yellow-400 to-yellow-500 text-black font-semibold rounded-xl hover:from-yellow-500 hover:to-yellow-600 transition-all duration-300 transform hover:scale-105"> Collabora Ora </button>
+       </div>
+      </div>
+     </div><!-- Top Influencer 2 -->
+     <div class="influencer-premium group relative">
+      <div class="absolute inset-0 bg-gradient-to-br from-yellow-400/10 to-transparent rounded-3xl transform -rotate-1 group-hover:-rotate-2 transition-transform duration-500"></div>
+      <div class="relative bg-white/5 backdrop-blur-xl rounded-3xl overflow-hidden border border-white/10 group-hover:bg-white/10 group-hover:border-white/20 transition-all duration-500 shadow-2xl"><!-- Profile Image Placeholder -->
+       <div class="aspect-square bg-gradient-to-br from-pink-200 to-pink-300 flex items-center justify-center text-6xl relative overflow-hidden">
+        👩‍🎨 
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div><!-- Hover Description Overlay -->
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+         <div class="text-center text-white">
+          <h4 class="text-lg font-bold mb-2">Sofia Bianchi</h4>
+          <p class="text-sm opacity-90 leading-relaxed">Fashion influencer e content creator con una passione per il lifestyle sostenibile. Collabora con i brand più prestigiosi del settore moda e beauty, ispirando migliaia di follower ogni giorno.</p>
+         </div>
+        </div><!-- Verified Badge -->
+        <div class="absolute top-4 right-4 w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center shadow-lg">
+         <svg class="w-5 h-5 text-white" fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+         </svg>
+        </div><!-- Live Indicator -->
+        <div class="absolute top-4 left-4 flex items-center space-x-2">
+         <div class="w-3 h-3 bg-green-400 rounded-full animate-pulse shadow-lg"></div><span class="text-white text-xs font-semibold bg-black/60 backdrop-blur-sm px-2 py-1 rounded-full">ATTIVO</span>
+        </div>
+       </div><!-- Info Panel -->
+       <div class="p-6">
+        <div class="flex items-center justify-between mb-3">
+         <h3 class="text-2xl font-bold group-hover:text-yellow-400 transition-colors duration-300">Sofia Bianchi</h3>
+         <div class="flex space-x-2">
+          <div class="w-6 h-6 bg-pink-500 rounded flex items-center justify-center text-white text-xs">
+           📷
+          </div>
+          <div class="w-6 h-6 bg-black rounded flex items-center justify-center text-white text-xs">
+           🎵
+          </div>
+          <div class="w-6 h-6 bg-red-600 rounded flex items-center justify-center text-white text-xs">
+           📺
+          </div>
+         </div>
+        </div>
+        <p class="text-sm opacity-70 mb-4">Fashion &amp; Lifestyle Creator</p><!-- Stats Row -->
+        <div class="grid grid-cols-3 gap-4 mb-4">
+         <div class="text-center">
+          <div class="text-lg font-bold influencer-stats">
+           800K
+          </div>
+          <div class="text-xs opacity-60">
+           Followers
+          </div>
+         </div>
+         <div class="text-center">
+          <div class="text-lg font-bold influencer-stats">
+           6.2%
+          </div>
+          <div class="text-xs opacity-60">
+           Engagement
+          </div>
+         </div>
+         <div class="text-center">
+          <div class="text-lg font-bold influencer-stats">
+           18-35
+          </div>
+          <div class="text-xs opacity-60">
+           Età Target
+          </div>
+         </div>
+        </div><!-- Specialties -->
+        <div class="flex flex-wrap gap-2 mb-4"><span class="influencer-tag px-3 py-1 rounded-full text-xs font-semibold">Moda</span> <span class="influencer-tag px-3 py-1 rounded-full text-xs font-semibold">Beauty</span> <span class="influencer-tag px-3 py-1 rounded-full text-xs font-semibold">Travel</span>
+        </div><!-- CTA Button --> <button class="w-full py-3 bg-gradient-to-r from-yellow-400 to-yellow-500 text-black font-semibold rounded-xl hover:from-yellow-500 hover:to-yellow-600 transition-all duration-300 transform hover:scale-105"> Collabora Ora </button>
+       </div>
+      </div>
+     </div><!-- Top Influencer 3 -->
+     <div class="influencer-premium group relative">
+      <div class="absolute inset-0 bg-gradient-to-br from-yellow-400/10 to-transparent rounded-3xl transform rotate-1 group-hover:rotate-2 transition-transform duration-500"></div>
+      <div class="relative bg-white/5 backdrop-blur-xl rounded-3xl overflow-hidden border border-white/10 group-hover:bg-white/10 group-hover:border-white/20 transition-all duration-500 shadow-2xl"><!-- Profile Image Placeholder -->
+       <div class="aspect-square bg-gradient-to-br from-orange-200 to-orange-300 flex items-center justify-center text-6xl relative overflow-hidden">
+        👨‍🍳 
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div><!-- Hover Description Overlay -->
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+         <div class="text-center text-white">
+          <h4 class="text-lg font-bold mb-2">Luca Ferrari</h4>
+          <p class="text-sm opacity-90 leading-relaxed">Chef e food blogger appassionato di cucina italiana e viaggi gastronomici. Condivide ricette autentiche e scoperte culinarie, collaborando con ristoranti e brand del settore food &amp; beverage.</p>
+         </div>
+        </div><!-- Verified Badge -->
+        <div class="absolute top-4 right-4 w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center shadow-lg">
+         <svg class="w-5 h-5 text-white" fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+         </svg>
+        </div><!-- Live Indicator -->
+        <div class="absolute top-4 left-4 flex items-center space-x-2">
+         <div class="w-3 h-3 bg-green-400 rounded-full animate-pulse shadow-lg"></div><span class="text-white text-xs font-semibold bg-black/60 backdrop-blur-sm px-2 py-1 rounded-full">ATTIVO</span>
+        </div>
+       </div><!-- Info Panel -->
+       <div class="p-6">
+        <div class="flex items-center justify-between mb-3">
+         <h3 class="text-2xl font-bold group-hover:text-yellow-400 transition-colors duration-300">Luca Ferrari</h3>
+         <div class="flex space-x-2">
+          <div class="w-6 h-6 bg-red-600 rounded flex items-center justify-center text-white text-xs">
+           📺
+          </div>
+          <div class="w-6 h-6 bg-pink-500 rounded flex items-center justify-center text-white text-xs">
+           📷
+          </div>
+          <div class="w-6 h-6 bg-black rounded flex items-center justify-center text-white text-xs">
+           🎵
+          </div>
+         </div>
+        </div>
+        <p class="text-sm opacity-70 mb-4">Food &amp; Travel Expert</p><!-- Stats Row -->
+        <div class="grid grid-cols-3 gap-4 mb-4">
+         <div class="text-center">
+          <div class="text-lg font-bold influencer-stats">
+           650K
+          </div>
+          <div class="text-xs opacity-60">
+           Followers
+          </div>
+         </div>
+         <div class="text-center">
+          <div class="text-lg font-bold influencer-stats">
+           5.4%
+          </div>
+          <div class="text-xs opacity-60">
+           Engagement
+          </div>
+         </div>
+         <div class="text-center">
+          <div class="text-lg font-bold influencer-stats">
+           25-50
+          </div>
+          <div class="text-xs opacity-60">
+           Età Target
+          </div>
+         </div>
+        </div><!-- Specialties -->
+        <div class="flex flex-wrap gap-2 mb-4"><span class="influencer-tag px-3 py-1 rounded-full text-xs font-semibold">Cucina</span> <span class="influencer-tag px-3 py-1 rounded-full text-xs font-semibold">Viaggi</span> <span class="influencer-tag px-3 py-1 rounded-full text-xs font-semibold">Wine</span>
+        </div><!-- CTA Button --> <button class="w-full py-3 bg-gradient-to-r from-yellow-400 to-yellow-500 text-black font-semibold rounded-xl hover:from-yellow-500 hover:to-yellow-600 transition-all duration-300 transform hover:scale-105"> Collabora Ora </button>
+       </div>
+      </div>
+     </div>
+    </div><!-- More Influencers Carousel -->
+    <div class="text-center mb-8">
+     <h3 class="text-2xl font-semibold mb-4 opacity-80">Altri Creator della Nostra Network</h3>
+     <p class="opacity-60">Scorri per scoprire tutti i nostri talenti</p>
+    </div><!-- Horizontal Scrolling Carousel -->
+    <div class="relative">
+     <div class="flex overflow-x-auto space-x-6 pb-6 scrollbar-hide" style="scroll-snap-type: x mandatory;"><!-- Mini Influencer Cards -->
+      <div class="flex-shrink-0 w-72 bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300" style="scroll-snap-align: start;">
+       <div class="flex items-center space-x-4 mb-4">
+        <div class="w-16 h-16 bg-gradient-to-br from-purple-200 to-purple-300 rounded-full flex items-center justify-center text-2xl">
+         👩‍💻
+        </div>
+        <div>
+         <h4 class="font-bold text-lg">Giulia Romano</h4>
+         <p class="text-sm opacity-70">Tech &amp; Innovation</p>
+        </div>
+        <div class="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center ml-auto">
+         <svg class="w-4 h-4 text-white" fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+         </svg>
+        </div>
+       </div>
+       <div class="grid grid-cols-2 gap-4 mb-4">
+        <div class="text-center">
+         <div class="font-bold influencer-stats">
+          450K
+         </div>
+         <div class="text-xs opacity-60">
+          Followers
+         </div>
+        </div>
+        <div class="text-center">
+         <div class="font-bold influencer-stats">
+          4.1%
+         </div>
+         <div class="text-xs opacity-60">
+          Engagement
+         </div>
+        </div>
+       </div>
+       <div class="flex space-x-2 mb-4"><span class="influencer-tag px-2 py-1 rounded-full text-xs">AI</span> <span class="influencer-tag px-2 py-1 rounded-full text-xs">Coding</span>
+       </div>
+      </div>
+      <div class="flex-shrink-0 w-72 bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300" style="scroll-snap-align: start;">
+       <div class="flex items-center space-x-4 mb-4">
+        <div class="w-16 h-16 bg-gradient-to-br from-red-200 to-red-300 rounded-full flex items-center justify-center text-2xl">
+         👨‍🎤
+        </div>
+        <div>
+         <h4 class="font-bold text-lg">Andrea Conti</h4>
+         <p class="text-sm opacity-70">Music &amp; Entertainment</p>
+        </div>
+        <div class="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center ml-auto">
+         <svg class="w-4 h-4 text-white" fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+         </svg>
+        </div>
+       </div>
+       <div class="grid grid-cols-2 gap-4 mb-4">
+        <div class="text-center">
+         <div class="font-bold influencer-stats">
+          1.2M
+         </div>
+         <div class="text-xs opacity-60">
+          Followers
+         </div>
+        </div>
+        <div class="text-center">
+         <div class="font-bold influencer-stats">
+          7.8%
+         </div>
+         <div class="text-xs opacity-60">
+          Engagement
+         </div>
+        </div>
+       </div>
+       <div class="flex space-x-2 mb-4"><span class="influencer-tag px-2 py-1 rounded-full text-xs">Musica</span> <span class="influencer-tag px-2 py-1 rounded-full text-xs">Live</span>
+       </div>
+      </div>
+      <div class="flex-shrink-0 w-72 bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300" style="scroll-snap-align: start;">
+       <div class="flex items-center space-x-4 mb-4">
+        <div class="w-16 h-16 bg-gradient-to-br from-green-200 to-green-300 rounded-full flex items-center justify-center text-2xl">
+         👩‍⚕️
+        </div>
+        <div>
+         <h4 class="font-bold text-lg">Elena Marino</h4>
+         <p class="text-sm opacity-70">Health &amp; Wellness</p>
+        </div>
+        <div class="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center ml-auto">
+         <svg class="w-4 h-4 text-white" fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+         </svg>
+        </div>
+       </div>
+       <div class="grid grid-cols-2 gap-4 mb-4">
+        <div class="text-center">
+         <div class="font-bold influencer-stats">
+          550K
+         </div>
+         <div class="text-xs opacity-60">
+          Followers
+         </div>
+        </div>
+        <div class="text-center">
+         <div class="font-bold influencer-stats">
+          5.9%
+         </div>
+         <div class="text-xs opacity-60">
+          Engagement
+         </div>
+        </div>
+       </div>
+       <div class="flex space-x-2 mb-4"><span class="influencer-tag px-2 py-1 rounded-full text-xs">Fitness</span> <span class="influencer-tag px-2 py-1 rounded-full text-xs">Nutrition</span>
+       </div>
+      </div>
+      <div class="flex-shrink-0 w-72 bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300" style="scroll-snap-align: start;">
+       <div class="flex items-center space-x-4 mb-4">
+        <div class="w-16 h-16 bg-gradient-to-br from-blue-200 to-blue-300 rounded-full flex items-center justify-center text-2xl">
+         👨‍🏫
+        </div>
+        <div>
+         <h4 class="font-bold text-lg">Paolo Greco</h4>
+         <p class="text-sm opacity-70">Education &amp; Finance</p>
+        </div>
+        <div class="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center ml-auto">
+         <svg class="w-4 h-4 text-white" fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+         </svg>
+        </div>
+       </div>
+       <div class="grid grid-cols-2 gap-4 mb-4">
+        <div class="text-center">
+         <div class="font-bold influencer-stats">
+          400K
+         </div>
+         <div class="text-xs opacity-60">
+          Followers
+         </div>
+        </div>
+        <div class="text-center">
+         <div class="font-bold influencer-stats">
+          3.7%
+         </div>
+         <div class="text-xs opacity-60">
+          Engagement
+         </div>
+        </div>
+       </div>
+       <div class="flex space-x-2 mb-4"><span class="influencer-tag px-2 py-1 rounded-full text-xs">Finanza</span> <span class="influencer-tag px-2 py-1 rounded-full text-xs">Crypto</span>
+       </div>
+      </div>
+      <div class="flex-shrink-0 w-72 bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300" style="scroll-snap-align: start;">
+       <div class="flex items-center space-x-4 mb-4">
+        <div class="w-16 h-16 bg-gradient-to-br from-pink-200 to-pink-300 rounded-full flex items-center justify-center text-2xl">
+         👩‍🎓
+        </div>
+        <div>
+         <h4 class="font-bold text-lg">Chiara Ricci</h4>
+         <p class="text-sm opacity-70">Beauty &amp; Skincare</p>
+        </div>
+        <div class="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center ml-auto">
+         <svg class="w-4 h-4 text-white" fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+         </svg>
+        </div>
+       </div>
+       <div class="grid grid-cols-2 gap-4 mb-4">
+        <div class="text-center">
+         <div class="font-bold influencer-stats">
+          900K
+         </div>
+         <div class="text-xs opacity-60">
+          Followers
+         </div>
+        </div>
+        <div class="text-center">
+         <div class="font-bold influencer-stats">
+          6.5%
+         </div>
+         <div class="text-xs opacity-60">
+          Engagement
+         </div>
+        </div>
+       </div>
+       <div class="flex space-x-2 mb-4"><span class="influencer-tag px-2 py-1 rounded-full text-xs">Skincare</span> <span class="influencer-tag px-2 py-1 rounded-full text-xs">Makeup</span>
+       </div>
+      </div>
+     </div>
+    </div><!-- Network Stats -->
+    <div class="mt-16 text-center">
+     <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+      <div class="group">
+       <div class="text-3xl font-bold mb-2 group-hover:text-yellow-400 transition-colors duration-300">
+        200+
+       </div>
+       <div class="text-sm opacity-70">
+        Creator Attivi
+       </div>
+      </div>
+      <div class="group">
+       <div class="text-3xl font-bold mb-2 group-hover:text-yellow-400 transition-colors duration-300">
+        50M+
+       </div>
+       <div class="text-sm opacity-70">
+        Reach Totale
+       </div>
+      </div>
+      <div class="group">
+       <div class="text-3xl font-bold mb-2 group-hover:text-yellow-400 transition-colors duration-300">
+        5.2%
+       </div>
+       <div class="text-sm opacity-70">
+        Engagement Medio
+       </div>
+      </div>
+      <div class="group">
+       <div class="text-3xl font-bold mb-2 group-hover:text-yellow-400 transition-colors duration-300">
+        15
+       </div>
+       <div class="text-sm opacity-70">
+        Settori Coperti
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section><!-- Contact Section -->
+  <section id="contatti" class="py-20 px-6 text-white">
+   <div class="max-w-4xl mx-auto">
+    <h2 id="contact-title" class="text-4xl md:text-5xl font-bold text-center mb-4"></h2>
+    <p id="contact-subtitle" class="text-xl text-center mb-12 opacity-90"></p>
+    <form id="contact-form" class="space-y-6">
+     <div class="grid md:grid-cols-2 gap-6">
+      <div><label for="name" class="block mb-2 font-semibold">Nome</label> <input type="text" id="name" required class="w-full px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2">
+      </div>
+      <div><label for="email" class="block mb-2 font-semibold">Email</label> <input type="email" id="email" required class="w-full px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2">
+      </div>
+     </div>
+     <div><label for="company" class="block mb-2 font-semibold">Azienda</label> <input type="text" id="company" class="w-full px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2">
+     </div>
+     <div><label for="message" class="block mb-2 font-semibold">Messaggio</label> <textarea id="message" rows="5" required class="w-full px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2"></textarea>
+     </div>
+     <button type="submit" class="w-full py-4 rounded-lg font-bold text-lg transition-all duration-300 hover:scale-105"> Invia Messaggio 
+      </button>
+     <div id="form-message" class="text-center font-semibold hidden"></div>
+    </form>
+    <div class="mt-12 text-center">
+     <p class="mb-4 text-lg">Oppure contattaci direttamente:</p>
+     <div class="space-y-2">
+      <p>📧 info@digitalagency.com</p>
+      <p>📱 +39 02 1234 5678</p>
+      <p>📍 Milano, Italia</p>
+     </div>
+    </div>
+   </div>
+  </section><!-- Footer -->
+  <footer class="py-8 px-6 text-center">
+   <p class="opacity-70">© 2024 <span id="footer-company"></span>. Tutti i diritti riservati.</p>
+  </footer>
+  <script>
+        const defaultConfig = {
+            background_color: "#1d1d1b",
+            surface_color: "#f2f2f2",
+            text_color: "#1d1d1b",
+            primary_action_color: "#FEC608",
+            secondary_action_color: "#308eaa",
+            font_family: "system-ui",
+            font_size: 16,
+            company_name: "Social Boost Agency",
+            hero_title: "Trasformiamo i Social in Opportunità",
+            hero_subtitle: "Connetti il tuo brand con gli influencer giusti",
+            services_title: "I Nostri Servizi",
+            partners_title: "I Nostri Partner",
+            influencers_title: "I Nostri Influencer",
+            contact_title: "Contattaci",
+            contact_subtitle: "Inizia il tuo percorso digitale con noi"
+        };
+
+        async function onConfigChange(config) {
+            const customFont = config.font_family || defaultConfig.font_family;
+            const baseFontStack = 'system-ui, -apple-system, sans-serif';
+            const baseSize = config.font_size || defaultConfig.font_size;
+            const bgColor = config.background_color || defaultConfig.background_color;
+            const surfaceColor = config.surface_color || defaultConfig.surface_color;
+            const textColor = config.text_color || defaultConfig.text_color;
+            const primaryActionColor = config.primary_action_color || defaultConfig.primary_action_color;
+
+            document.body.style.fontFamily = `${customFont}, ${baseFontStack}`;
+            document.body.style.fontSize = `${baseSize}px`;
+            document.body.style.color = textColor;
+            document.body.style.background = surfaceColor;
+
+            const gradientBgs = document.querySelectorAll('.gradient-bg');
+            gradientBgs.forEach(el => {
+                el.style.background = bgColor;
+            });
+
+            // Services section background
+            const servicesSection = document.getElementById('servizi');
+            servicesSection.style.background = bgColor;
+
+            const navbar = document.getElementById('navbar');
+            navbar.style.background = bgColor;
+            navbar.style.color = primaryActionColor;
+
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.style.color = primaryActionColor;
+            });
+
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            mobileMenuBtn.style.color = primaryActionColor;
+
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.style.color = primaryActionColor;
+            });
+
+            document.getElementById('nav-logo').textContent = config.company_name || defaultConfig.company_name;
+            document.getElementById('nav-logo').style.fontSize = `${baseSize * 1.5}px`;
+            document.getElementById('nav-logo').style.color = primaryActionColor;
+
+            document.getElementById('hero-title').textContent = config.hero_title || defaultConfig.hero_title;
+            document.getElementById('hero-title').style.fontSize = `${baseSize * 3}px`;
+
+            document.getElementById('hero-subtitle').textContent = config.hero_subtitle || defaultConfig.hero_subtitle;
+            document.getElementById('hero-subtitle').style.fontSize = `${baseSize * 1.25}px`;
+
+            const heroButton = document.querySelector('#home a');
+            heroButton.style.background = primaryActionColor;
+            heroButton.style.color = bgColor;
+
+            document.getElementById('services-title').textContent = config.services_title || defaultConfig.services_title;
+            document.getElementById('services-title').style.fontSize = `${baseSize * 2.5}px`;
+            document.getElementById('services-title').style.color = 'white';
+
+            const serviceCards = document.querySelectorAll('.service-card');
+            serviceCards.forEach(card => {
+                card.style.background = `linear-gradient(135deg, ${surfaceColor} 0%, ${surfaceColor}f5 100%)`;
+                card.style.color = textColor;
+                card.style.boxShadow = `0 20px 40px rgba(0,0,0,0.1), 0 8px 16px rgba(0,0,0,0.05)`;
+                card.style.border = `1px solid ${primaryActionColor}15`;
+                card.style.backdropFilter = 'blur(10px)';
+                const title = card.querySelector('h3');
+                if (title) {
+                    title.style.fontSize = `${baseSize * 1.5}px`;
+                    title.style.color = textColor;
+                }
+                const text = card.querySelector('p');
+                if (text) text.style.fontSize = `${baseSize}px`;
+                
+                // Update icon background with primary action color
+                const iconBg = card.querySelector('.bg-gradient-to-br');
+                if (iconBg) {
+                    iconBg.style.background = `linear-gradient(135deg, ${primaryActionColor} 0%, ${primaryActionColor}dd 100%)`;
+                }
+                
+                // Update CTA color
+                const cta = card.querySelector('.text-yellow-400');
+                if (cta) {
+                    cta.style.color = primaryActionColor;
+                }
+            });
+
+            document.getElementById('partners-title').textContent = config.partners_title || defaultConfig.partners_title;
+            document.getElementById('partners-title').style.fontSize = `${baseSize * 2.5}px`;
+            document.getElementById('partners-title').style.color = textColor;
+
+            const partnerSpotlights = document.querySelectorAll('.partner-spotlight .relative');
+            partnerSpotlights.forEach(card => {
+                card.style.background = `rgba(255, 255, 255, 0.1)`;
+                card.style.color = textColor;
+                card.style.backdropFilter = 'blur(10px)';
+                card.style.border = `1px solid rgba(255, 255, 255, 0.2)`;
+            });
+
+            const brandStrips = document.querySelectorAll('.animate-scroll > div');
+            brandStrips.forEach(strip => {
+                strip.style.background = `rgba(255, 255, 255, 0.05)`;
+                strip.style.color = textColor;
+                strip.style.backdropFilter = 'blur(5px)';
+                strip.style.border = `1px solid rgba(255, 255, 255, 0.1)`;
+            });
+
+            document.getElementById('influencers-title').textContent = config.influencers_title || defaultConfig.influencers_title;
+            document.getElementById('influencers-title').style.fontSize = `${baseSize * 2.5}px`;
+            document.getElementById('influencers-title').style.color = textColor;
+
+            const influencerCards = document.querySelectorAll('.influencer-card');
+            influencerCards.forEach(card => {
+                card.style.background = surfaceColor;
+                card.style.boxShadow = `0 4px 6px rgba(0,0,0,0.1)`;
+            });
+
+            // Update influencer premium cards
+            const influencerPremium = document.querySelectorAll('.influencer-premium .relative');
+            influencerPremium.forEach(card => {
+                card.style.background = `rgba(255, 255, 255, 0.05)`;
+                card.style.color = textColor;
+                card.style.backdropFilter = 'blur(20px)';
+                card.style.border = `1px solid rgba(255, 255, 255, 0.1)`;
+            });
+
+            // Update carousel cards
+            const carouselCards = document.querySelectorAll('.flex-shrink-0.w-72');
+            carouselCards.forEach(card => {
+                card.style.background = `rgba(255, 255, 255, 0.1)`;
+                card.style.color = textColor;
+                card.style.backdropFilter = 'blur(10px)';
+                card.style.border = `1px solid rgba(255, 255, 255, 0.2)`;
+            });
+
+            // Update influencer stats and tags with secondary action color
+            const influencerStats = document.querySelectorAll('.influencer-stats');
+            influencerStats.forEach(stat => {
+                stat.style.color = config.secondary_action_color || defaultConfig.secondary_action_color;
+            });
+
+            const influencerTags = document.querySelectorAll('.influencer-tag');
+            influencerTags.forEach(tag => {
+                tag.style.background = `${config.secondary_action_color || defaultConfig.secondary_action_color}20`;
+                tag.style.color = config.secondary_action_color || defaultConfig.secondary_action_color;
+            });
+
+            document.getElementById('contact-title').textContent = config.contact_title || defaultConfig.contact_title;
+            document.getElementById('contact-title').style.fontSize = `${baseSize * 2.5}px`;
+
+            document.getElementById('contact-subtitle').textContent = config.contact_subtitle || defaultConfig.contact_subtitle;
+            document.getElementById('contact-subtitle').style.fontSize = `${baseSize * 1.25}px`;
+
+            const formInputs = document.querySelectorAll('#contact-form input, #contact-form textarea');
+            formInputs.forEach(input => {
+                input.style.fontSize = `${baseSize}px`;
+            });
+
+            const submitButton = document.querySelector('#contact-form button[type="submit"]');
+            submitButton.style.background = primaryActionColor;
+            submitButton.style.color = bgColor;
+            submitButton.style.fontSize = `${baseSize * 1.125}px`;
+
+            document.getElementById('footer-company').textContent = config.company_name || defaultConfig.company_name;
+        }
+
+        function mapToCapabilities(config) {
+            return {
+                recolorables: [
+                    {
+                        get: () => config.background_color || defaultConfig.background_color,
+                        set: (value) => {
+                            config.background_color = value;
+                            window.elementSdk.setConfig({ background_color: value });
+                        }
+                    },
+                    {
+                        get: () => config.surface_color || defaultConfig.surface_color,
+                        set: (value) => {
+                            config.surface_color = value;
+                            window.elementSdk.setConfig({ surface_color: value });
+                        }
+                    },
+                    {
+                        get: () => config.text_color || defaultConfig.text_color,
+                        set: (value) => {
+                            config.text_color = value;
+                            window.elementSdk.setConfig({ text_color: value });
+                        }
+                    },
+                    {
+                        get: () => config.primary_action_color || defaultConfig.primary_action_color,
+                        set: (value) => {
+                            config.primary_action_color = value;
+                            window.elementSdk.setConfig({ primary_action_color: value });
+                        }
+                    },
+                    {
+                        get: () => config.secondary_action_color || defaultConfig.secondary_action_color,
+                        set: (value) => {
+                            config.secondary_action_color = value;
+                            window.elementSdk.setConfig({ secondary_action_color: value });
+                        }
+                    }
+                ],
+                borderables: [],
+                fontEditable: {
+                    get: () => config.font_family || defaultConfig.font_family,
+                    set: (value) => {
+                        config.font_family = value;
+                        window.elementSdk.setConfig({ font_family: value });
+                    }
+                },
+                fontSizeable: {
+                    get: () => config.font_size || defaultConfig.font_size,
+                    set: (value) => {
+                        config.font_size = value;
+                        window.elementSdk.setConfig({ font_size: value });
+                    }
+                }
+            };
+        }
+
+        function mapToEditPanelValues(config) {
+            return new Map([
+                ["company_name", config.company_name || defaultConfig.company_name],
+                ["hero_title", config.hero_title || defaultConfig.hero_title],
+                ["hero_subtitle", config.hero_subtitle || defaultConfig.hero_subtitle],
+                ["services_title", config.services_title || defaultConfig.services_title],
+                ["partners_title", config.partners_title || defaultConfig.partners_title],
+                ["influencers_title", config.influencers_title || defaultConfig.influencers_title],
+                ["contact_title", config.contact_title || defaultConfig.contact_title],
+                ["contact_subtitle", config.contact_subtitle || defaultConfig.contact_subtitle]
+            ]);
+        }
+
+        if (window.elementSdk) {
+            window.elementSdk.init({
+                defaultConfig,
+                onConfigChange,
+                mapToCapabilities,
+                mapToEditPanelValues
+            });
+        }
+
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                }
+            });
+        });
+
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const messageDiv = document.getElementById('form-message');
+            messageDiv.textContent = 'Grazie per averci contattato! Ti risponderemo presto.';
+            messageDiv.classList.remove('hidden');
+            this.reset();
+            setTimeout(() => {
+                messageDiv.classList.add('hidden');
+            }, 5000);
+        });
+
+        // Counter Animation
+        function animateCounters() {
+            const counters = document.querySelectorAll('.counter');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const counter = entry.target;
+                        const target = parseInt(counter.getAttribute('data-target'));
+                        const duration = 2000;
+                        const step = target / (duration / 16);
+                        let current = 0;
+                        
+                        const timer = setInterval(() => {
+                            current += step;
+                            if (current >= target) {
+                                counter.textContent = target + (target === 10 ? 'M+' : '+');
+                                clearInterval(timer);
+                            } else {
+                                counter.textContent = Math.floor(current) + (target === 10 ? 'M' : '');
+                            }
+                        }, 16);
+                        
+                        observer.unobserve(counter);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            counters.forEach(counter => observer.observe(counter));
+        }
+
+        // Parallax Effect for Video
+        function handleParallax() {
+            const video = document.getElementById('hero-video');
+            const scrolled = window.pageYOffset;
+            const rate = scrolled * -0.5;
+            
+            if (video) {
+                video.style.transform = `translateY(${rate}px)`;
+            }
+        }
+
+        // Video Error Handling
+        function setupVideoFallback() {
+            const video = document.getElementById('hero-video');
+            const overlay = document.getElementById('video-overlay');
+            
+            video.addEventListener('error', function() {
+                // Fallback to gradient background if video fails
+                const heroSection = document.getElementById('home');
+                heroSection.style.background = 'linear-gradient(135deg, #1d1d1b 0%, #333333 100%)';
+                video.style.display = 'none';
+                overlay.style.display = 'none';
+            });
+            
+            // Ensure video plays on mobile
+            video.addEventListener('loadeddata', function() {
+                video.play().catch(function() {
+                    // If autoplay fails, show play button or fallback
+                    console.log('Video autoplay prevented');
+                });
+            });
+        }
+
+        // Enhanced scroll handling
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.style.backdropFilter = 'blur(10px)';
+                navbar.style.background = `${window.elementSdk?.config?.background_color || defaultConfig.background_color}ee`;
+            } else {
+                navbar.style.backdropFilter = 'none';
+                navbar.style.background = window.elementSdk?.config?.background_color || defaultConfig.background_color;
+            }
+            
+            // Parallax effect
+            handleParallax();
+        });
+
+        // Initialize animations when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            animateCounters();
+            setupVideoFallback();
+        });
+    </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'99cc2c21f68cedcb',t:'MTc2Mjg0NzE1MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
