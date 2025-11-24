@@ -370,3 +370,67 @@
             animateCounters();
             setupVideoFallback();
         });
+
+
+        // GA4
+
+         window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-XXXXXXXXXX');
+
+        // Funzione per tracciare click su un elemento con GA4
+  function tracciaClick(elemento, categoria) {
+    elemento.addEventListener('click', function(event) {
+      const label = elemento.innerText.trim() || elemento.value || elemento.getAttribute('href') || 'Sconosciuto';
+      if(label) { // evita click senza etichetta
+        gtag('event', 'click_elemento', {
+          'event_category': categoria,
+          'event_label': label
+        });
+        console.log(`Tracciato: ${categoria} -> ${label}`);
+      }
+    });
+  }
+
+  // Funzione per filtrare link importanti
+  function isLinkImportante(el) {
+    const href = el.getAttribute('href');
+    // ignora link vuoti, #, javascript:void(0) e link in header/footer/nav/menu/social
+    if(!href || href.startsWith('#') || href.startsWith('javascript:')) return false;
+    if(el.closest('header, footer, nav, .menu, .social')) return false;
+    return true;
+  }
+
+  // Funzione per determinare categoria dinamica
+  function getCategoriaElemento(el) {
+    const tag = el.tagName.toLowerCase();
+    const label = (el.innerText || '').toLowerCase();
+
+    if(tag === 'button' || (tag === 'input' && el.type === 'submit')) {
+      if(label.includes('scarica') || label.includes('download')) return 'Download';
+      if(label.includes('invia') || label.includes('submit')) return 'Form Submit';
+      return 'CTA';
+    }
+
+    if(tag === 'a') {
+      if(label.includes('scarica') || label.includes('download')) return 'Download';
+      return 'Link';
+    }
+
+    return 'Altro';
+  }
+
+  // Traccia tutti i pulsanti importanti
+  document.querySelectorAll('button, input[type="submit"]').forEach(btn => {
+    const categoria = getCategoriaElemento(btn);
+    tracciaClick(btn, categoria);
+  });
+
+  // Traccia solo link importanti
+  document.querySelectorAll('a').forEach(lnk => {
+    if(isLinkImportante(lnk)) {
+      const categoria = getCategoriaElemento(lnk);
+      tracciaClick(lnk, categoria);
+    }
+  });
