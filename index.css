@@ -3,7 +3,7 @@ body {
         }
         
         .corner {
-          background-color: #fec608;
+          background-color:#308eaa;
         }
 
         
@@ -20,11 +20,13 @@ body {
         }
 
         #servizi,
-        #contatti  {
+        #contatti {
           background-color: #1d1d1b;
         }
 
-        
+        #influencer {
+          background-color: #308eaa;
+        }
 
         * {
             margin: 0;
@@ -63,7 +65,7 @@ body {
             left: 0;
             width: 0;
             height: 2px;
-            background: white;
+            background: #308eaa;
             transition: width 0.3s ease;
         }
 
@@ -297,10 +299,15 @@ body {
             }
         }
 
+
         .partner-spotlight {
             transition: all 0.5s ease;
         }
 
         .partner-spotlight:hover {
             transform: translateY(-10px);
+        }
+
+        .icon {
+          background-color: #308eaa;
         }
